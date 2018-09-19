@@ -29,9 +29,13 @@ public class CollectionTestSuite {
 
     @Test
     public void testOddNumbersExterminatorNormalList(){
-        ArrayList<Integer> even = new ArrayList<>();
 
-        System.out.println("The list is empty:" + even.isEmpty());
+        ArrayList<Integer> even = new ArrayList<>();
+        even.add(2);
+        even.add(4);
+        even.add(5);
+        even.add(6);
+        System.out.println("The size of the list is:" + even.size());
     }
 
 }
