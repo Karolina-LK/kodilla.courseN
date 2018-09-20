@@ -5,6 +5,10 @@ import org.junit.*;
 import java.util.ArrayList;
 
 public class CollectionTestSuite {
+
+
+
+
     @Before
     public void before(){
         System.out.println("Test Case: begin");
@@ -23,6 +27,7 @@ public class CollectionTestSuite {
     }
     @Test
     public void testOddNumbersExterminatorEmptyList(){
+
         ArrayList<Integer> even = new ArrayList<>();
         System.out.println("The List is empty:" + even.isEmpty() +";");
     }
@@ -30,12 +35,26 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList(){
 
-        ArrayList<Integer> even = new ArrayList<>();
-        even.add(2);
-        even.add(4);
-        even.add(5);
-        even.add(6);
-        System.out.println("The size of the list is:" + even.size());
+        ArrayList<Integer> allNumbers = new ArrayList<>();
+        allNumbers.add(200);
+        allNumbers.add(199);
+        allNumbers.add(180);
+        allNumbers.add(179);
+        allNumbers.add(2);
+
+
+
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        exterminator.exterminate(allNumbers);
+
+        ArrayList<Integer> verifiedNumbers;
+        verifiedNumbers = new ArrayList<>();
+        verifiedNumbers.add(200);
+        verifiedNumbers.add(180);
+        verifiedNumbers.add(2);
+
+       Assert.assertEquals(exterminator, verifiedNumbers);
+
     }
 
 }
