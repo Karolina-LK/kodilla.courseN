@@ -34,18 +34,31 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorNormalList() {
 
+        ArrayList<Integer> newEven = new ArrayList<Integer>();
+        newEven.add(1);
+        newEven.add(2);
+        newEven.add(3);
+        newEven.add(4);
+        newEven.add(5);
+        newEven.add(6);
+        newEven.add(7);
+        newEven.add(8);
 
-        ArrayList<Integer> evenList = OddNumbersExterminator.exterminate(new ArrayList<Integer> (1, 2, 3, 4, 5, 6, 7, 8, 9));
+        ArrayList<Integer> evenList = OddNumbersExterminator.exterminate(newEven);
 
-        Assert.assertTrue(evenList.size() == 4);
+        Assert.assertEquals(4, evenList.size());
         assertResultNumbers(evenList);
     }
 
         private void assertResultNumbers (ArrayList < Integer > evenList) {
             for (Integer i : evenList) {
-                Assert.assertTrue(i % 2 == 0);
+                Assert.assertEquals(0, i % 2);
             }
+
     }
+
+
+
 
 
 
