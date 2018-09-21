@@ -6,9 +6,6 @@ import java.util.ArrayList;
 
 public class CollectionTestSuite {
 
-
-
-
     @Before
     public void before(){
         System.out.println("Test Case: begin");
@@ -28,33 +25,28 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList(){
 
-        ArrayList<Integer> even = new ArrayList<>();
-        System.out.println("The List is empty:" + even.isEmpty() +";");
+        ArrayList<Integer> emptyList = OddNumbersExterminator.exterminate(new ArrayList<>());
+
+        Assert.assertTrue(emptyList.isEmpty());
+
     }
 
     @Test
-    public void testOddNumbersExterminatorNormalList(){
-
-        ArrayList<Integer> allNumbers = new ArrayList<>();
-        allNumbers.add(200);
-        allNumbers.add(199);
-        allNumbers.add(180);
-        allNumbers.add(179);
-        allNumbers.add(2);
+    public void testOddNumbersExterminatorNormalList() {
 
 
+        ArrayList<Integer> evenList = OddNumbersExterminator.exterminate(new ArrayList<Integer> (1, 2, 3, 4, 5, 6, 7, 8, 9));
 
-        OddNumbersExterminator exterminator = new OddNumbersExterminator();
-        exterminator.exterminate(allNumbers);
-
-        ArrayList<Integer> verifiedNumbers;
-        verifiedNumbers = new ArrayList<>();
-        verifiedNumbers.add(200);
-        verifiedNumbers.add(180);
-        verifiedNumbers.add(2);
-
-       Assert.assertEquals(exterminator, verifiedNumbers);
-
+        Assert.assertTrue(evenList.size() == 4);
+        assertResultNumbers(evenList);
     }
+
+        private void assertResultNumbers (ArrayList < Integer > evenList) {
+            for (Integer i : evenList) {
+                Assert.assertTrue(i % 2 == 0);
+            }
+    }
+
+
 
 }
